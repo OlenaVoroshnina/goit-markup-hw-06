@@ -527,6 +527,12 @@ img {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   margin-right: 12px;
+  color: rgba(255, 255, 255, 0.6);
+
+  transition: outline 250ms var(--timing-function);
+}
+.form-footer-input:focus{
+  outline: 1px solid rgba(255, 255, 255, 0.3);
 }
 .form-footer-input::placeholder{
 font-weight: 400;
@@ -544,12 +550,29 @@ color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
   outline: 2px solid var(--blue);
   outline-offset: -2px;
+  text-align: left;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+}
+.form-footer-btn:focus,
+.form-footer-btn:hover{
+  cursor: pointer;
+  
+}
+.form-footer-label{
   font-weight: 700;
   font-size: 16px;
   line-height: 1.9;
   letter-spacing: 0.06em;
   color: #FFFFFF;
-  text-align: left;
+  margin-right: 10px;
+}
+.footer-form-icon{
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  position: absolute;
 }
 
 .backdrop {
@@ -603,6 +626,8 @@ color: rgba(255, 255, 255, 0.6);
   background-color: transparent;
   cursor: pointer;
   fill: var(--black);
+
+  transition: fill 250ms var(--timing-function);
 }
 .modal-btn:hover,
 .modal-btn:focus {
@@ -643,6 +668,8 @@ color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: transparent;
+
+  transition: border 250ms var(--timing-function);
 }
 .form-icon {
   height: 18px;
@@ -651,6 +678,8 @@ color: rgba(255, 255, 255, 0.6);
   left: 12px;
   transform: translateY(-50%);
   fill: var(--black-title);
+
+  transition: fill 250ms var(--timing-function);
 }
 .form-field:focus-within > .form-icon {
   fill: var(--blue);
@@ -716,14 +745,18 @@ color: rgba(255, 255, 255, 0.6);
   left: 12px;
   transform: translateY(-50%);
   background-color: transparent;
+
+  transition: background-color 250ms var(--timing-function);
 }
-.checkbox-input:checked + .checkbox-icon {
+.checkbox-field:focus-within > .checkbox-icon,
+.checkbox-input:checked + .checkbox-icon{
   background-color: var(--blue);
   background-image: url(../images/checked.svg);
   background-size: contain;
   background-origin: border-box;
   border-color: var(--blue);
   border-radius: 2px;
+  background-repeat: no-repeat;
 }
 .form-btn {
   width: 200px;
@@ -743,6 +776,8 @@ color: rgba(255, 255, 255, 0.6);
   background-color: var(--blue);
   outline: 4px solid var(--blue);
   outline-offset: -4px;
+
+  transition: background-color 250ms var(--timing-function);
 }
 .form-btn:hover,
 .form-btn:focus {
